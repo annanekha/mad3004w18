@@ -1,6 +1,6 @@
 //
 //  main.swift
-//  class activity
+//  miscellaneous
 //
 //  Created by Anna Nekha Shabu on 2018-02-14.
 //  Copyright © 2018 Anna Nekha Shabu. All rights reserved.
@@ -8,48 +8,29 @@
 
 import Foundation
 
-var speedFine = 200
-var redlight = 300
-var seatbelt = 400
+//print("Hello, World!")
 
+var e1 = Employee()
+print(Employee.getNoOfObjects())
+e1.greet(name: "Sonal")
+var e2 = Employee()
+print(Employee.getNoOfObjects())
 
-let pan = Penalty()
+var p1 = PartTime()
+p1.greet(name: "p1")
 
-do
-{
-    try pan.tickettype(number: "T1")
-}
-    
-catch ticket.notValidTicket
-{
-    print("Not Available")
-}
-    
-catch ticket.speedBreak
-{
-    print("Disapprove")
-    print("Overspeeding")
-    print("Fine Decrease to : \(speedFine-100)")
-}
-    
-catch ticket.redLightBreak
-{
-    print("Disapprove")
-    print("Red Light Fine")
-    print("Fine Decrease to : \(redlight-100)")
-}
-    
-catch ticket.seatBeltIssue
-{
-    print("Disapprove")
-    print("No Seat Belt")
-    print("Fine Decrease to : \(seatbelt-100)")
-}
-    
-catch ticket.invalidLicense
-{
-    print("Disapprove")
-    print("License Not Valid")
-    
-}
+//p1.getNoOObjects()
 
+e1 = p1
+e1.greet(name: "Name")
+
+var r1 : Employee
+r1 = Employee()
+r1.greet(name : "part Time")
+
+r1 = PartTime()
+r1.greet(name: "Part Time")
+
+//Reference
+p1 = e1 as! PartTime
+p1.greet(name: "Naveen")
