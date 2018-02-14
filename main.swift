@@ -1,37 +1,55 @@
 //
 //  main.swift
-//  day10
+//  class activity
 //
 //  Created by Anna Nekha Shabu on 2018-02-14.
 //  Copyright © 2018 Anna Nekha Shabu. All rights reserved.
 //
 
-
 import Foundation
 
-//gives the fatal error but we havnt handled the error
-//throw limitIncreaseError.ineligible
-//var obj1 = RequestLimitIncrease()
-//try obj1.increaseLimit(acno = "S1100")
-var processRequest = RequestLimitIncrease()
+var speedFine = 200
+var redlight = 300
+var seatbelt = 400
 
-//to process whole enumeration
-do{
-    try processRequest.increaseLimit(accountNo: "S1200")
-    //}catch is limitIncreaseError{
-    //    print("Something wrong with your account")
-    //}
-    //for individual accessing
-}catch limitIncreaseError.insufficientBalance {
-    print("You don't have sufficient balance.")
-}catch limitIncreaseError.ineligible {
-    print("You don't have account with us")
-}catch limitIncreaseError.noSavingAccount {
-    print("Limit increase is only available to Saving accounts.")
-}catch limitIncreaseError.statusAlreadyApproved{
-    print("Your request is already Approved")
+
+let pan = Penalty()
+
+do
+{
+    try pan.tickettype(number: "T1")
 }
-catch {
-    print("Unexpected Error.")
+    
+catch ticket.notValidTicket
+{
+    print("Not Available")
+}
+    
+catch ticket.speedBreak
+{
+    print("Disapprove")
+    print("Overspeeding")
+    print("Fine Decrease to : \(speedFine-100)")
+}
+    
+catch ticket.redLightBreak
+{
+    print("Disapprove")
+    print("Red Light Fine")
+    print("Fine Decrease to : \(redlight-100)")
+}
+    
+catch ticket.seatBeltIssue
+{
+    print("Disapprove")
+    print("No Seat Belt")
+    print("Fine Decrease to : \(seatbelt-100)")
+}
+    
+catch ticket.invalidLicense
+{
+    print("Disapprove")
+    print("License Not Valid")
+    
 }
 
